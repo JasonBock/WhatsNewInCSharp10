@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WhatsNewInCSharp10
+﻿namespace WhatsNewInCSharp10
 {
 	public sealed class NullCheckCustomer
 	{
