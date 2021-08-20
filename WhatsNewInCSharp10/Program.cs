@@ -151,6 +151,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 static void DemonstrateStaticAbstractMembersInInterfaces()
 {
+	// Remember to look at the settings in the .csproj file.
 	static T Add<T>(T left, T right)
 		where T : INumber<T> => left + right;
 
