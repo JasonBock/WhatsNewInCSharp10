@@ -1,4 +1,4 @@
-﻿namespace WhatsNewInCSharp10;
+﻿namespace WhatsNewInCSharp10.Company.Models;
 
 public sealed class Customer
 {

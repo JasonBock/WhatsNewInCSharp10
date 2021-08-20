@@ -2,6 +2,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
+using WhatsNewInCSharp10.Company.Models;
 
 //DemonstrateGlobalUsingNamespaces();
 //DemonstrateFileScopedNamespaces();
@@ -15,7 +16,8 @@ using WhatsNewInCSharp10;
 //DemonstrateConstantInterpolatedStrings();
 //DemonstrateInterpolatedStringImprovements();
 //DemonstrateCallerArgumentExpression();
-//DemonstrateStaticAbstractMembersInInterfaces();
+//DemonstrateAsyncMethodBuilderOverride();
+DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
@@ -26,8 +28,9 @@ static void DemonstrateGlobalUsingNamespaces() =>
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md
 static void DemonstrateFileScopedNamespaces()
 {
-	var customer = new RecordCustomer(Guid.NewGuid(), "Jason");
+	var customer = new Customer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
+	WriteLine(typeof(Customer).FullName);
 }
 
 // https://github.com/dotnet/csharplang/issues/4334
@@ -116,10 +119,7 @@ static void DemonstrateConstantInterpolatedStrings()
 	WriteLine(MethodNames.NamesViaInterpolation);
 }
 
-static void DemonstrateInterpolatedStringImprovements()
-{
-}
-
+// https://github.com/dotnet/csharplang/issues/287
 static void DemonstrateCallerArgumentExpression()
 {
 	// It would've been nice if the "nameof(parameter)" feature would've made it into C# 10,
@@ -130,10 +130,36 @@ static void DemonstrateCallerArgumentExpression()
 			WriteLine($"{result} from {callerMemberName} doing {callerArgumentExpression}");
 
 	PrintBooleanResult(Math.PI > Math.Sqrt(Math.PI));
+	PrintBooleanResult(true);
+}
+
+// https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/improved-interpolated-strings.md
+static void DemonstrateInterpolatedStringImprovements()
+{
+	// Reminder: Look at the compiler output of DemonstrateCallerArgumentExpression() 
+	// to see how DefaultInterpolatedStringHandler is used by the compiler.
+}
+
+// TODO
+// https://github.com/dotnet/csharplang/issues/1407
+static void DemonstrateAsyncMethodBuilderOverride()
+{
+
 }
 
 // https://github.com/dotnet/csharplang/issues/4436
+// https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 static void DemonstrateStaticAbstractMembersInInterfaces()
 {
+	static T Add<T>(T left, T right)
+		where T : INumber<T> => left + right;
 
+	WriteLine(Add(3, 4));
+	WriteLine(Add(3.4, 4.3));
+
+	// Sadly, this doesn't work :(
+	//WriteLine(Add(BigInteger.Parse("49043910940940104390"), BigInteger.Parse("59839583901984390184")));
+
+	var customer = CreateableCustomer.Create();
+	WriteLine(customer);
 }
