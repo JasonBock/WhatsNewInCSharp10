@@ -133,7 +133,8 @@ static void DemonstrateCallerArgumentExpression()
 	// but it looks like it's getting pushed out...but keep it it in mind.
 	// https://github.com/dotnet/csharplang/issues/373
 	static void PrintBooleanResult(bool result,
-		[CallerMemberName] string? callerMemberName = null, [CallerArgumentExpression("result")] string? callerArgumentExpression = null) =>
+		[CallerMemberName] string? callerMemberName = null, 
+		[CallerArgumentExpression("result")] string? callerArgumentExpression = null) =>
 			WriteLine($"{result} from {callerMemberName} doing {callerArgumentExpression}");
 
 	PrintBooleanResult(Math.PI > Math.Sqrt(Math.PI));
