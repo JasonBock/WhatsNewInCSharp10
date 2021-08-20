@@ -4,25 +4,14 @@ using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 
-//DemonstrateGlobalUsingNamespaces();
-//DemonstrateFileScopedNamespaces();
-//DemonstrateRecordStructs();
-//DemonstrateSealedRecordToString();
-//DemonstrateParameterlessStructConstructors();
-//DemonstrateMixingDeclarationsAndVariablesInDeconstruction();
-//DemonstrateWithExpressionsAndAnonymousTypes();
-//DemonstrateExtendedPropertyPatterns();
-//DemonstrateBetterLambdas();
-//DemonstrateConstantInterpolatedStrings();
-//DemonstrateInterpolatedStringImprovements();
-//DemonstrateCallerArgumentExpression();
-//DemonstrateAsyncMethodBuilderOverride();
-DemonstrateStaticAbstractMembersInInterfaces();
+// DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
 static void DemonstrateGlobalUsingNamespaces() =>
-	WriteLine($"Hi, Pi is {Math.PI}");
+	WriteLine($"Hi, {nameof(Math.PI)} is {Math.PI}");
+
+//DemonstrateFileScopedNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/137
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md
@@ -33,12 +22,16 @@ static void DemonstrateFileScopedNamespaces()
 	WriteLine(typeof(Customer).FullName);
 }
 
+//DemonstrateRecordStructs();
+
 // https://github.com/dotnet/csharplang/issues/4334
 static void DemonstrateRecordStructs()
 {
 	var customer = new StructCustomer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 }
+
+//DemonstrateSealedRecordToString();
 
 // https://github.com/dotnet/csharplang/issues/4174
 static void DemonstrateSealedRecordToString()
@@ -50,12 +43,16 @@ static void DemonstrateSealedRecordToString()
 	WriteLine(sealedCustomer);
 }
 
+//DemonstrateParameterlessStructConstructors();
+
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/parameterless-struct-constructors.md
 static void DemonstrateParameterlessStructConstructors()
 {
 	var point = new Point { X = 1, Y = 2 };
 	WriteLine(point);
 }
+
+//DemonstrateMixingDeclarationsAndVariablesInDeconstruction();
 
 // https://github.com/dotnet/csharplang/issues/125
 static void DemonstrateMixingDeclarationsAndVariablesInDeconstruction()
@@ -67,12 +64,16 @@ static void DemonstrateMixingDeclarationsAndVariablesInDeconstruction()
 	WriteLine($"{differentId}, {name}");
 }
 
+//DemonstrateWithExpressionsAndAnonymousTypes();
+
 static void DemonstrateWithExpressionsAndAnonymousTypes()
 {
 	var customer = new { Id = Guid.NewGuid(), Name = "Jason" };
 	var differentCustomer = customer with { Name = "Jane" };
 	WriteLine(differentCustomer);
 }
+
+//DemonstrateExtendedPropertyPatterns();
 
 // https://github.com/dotnet/csharplang/issues/4394
 static void DemonstrateExtendedPropertyPatterns()
@@ -89,6 +90,8 @@ static void DemonstrateExtendedPropertyPatterns()
 		WriteLine("New check works.");
 	}
 }
+
+//DemonstrateBetterLambdas();
 
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/lambda-improvements.md
 static void DemonstrateBetterLambdas()
@@ -110,6 +113,8 @@ static void DemonstrateBetterLambdas()
 	WriteLine(newMultiplier(3, 4));
 }
 
+//DemonstrateConstantInterpolatedStrings();
+
 // https://github.com/dotnet/csharplang/issues/2951
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/constant_interpolated_strings.md
 static void DemonstrateConstantInterpolatedStrings()
@@ -118,6 +123,8 @@ static void DemonstrateConstantInterpolatedStrings()
 	WriteLine(MethodNames.NamesViaConcatenation);
 	WriteLine(MethodNames.NamesViaInterpolation);
 }
+
+//DemonstrateCallerArgumentExpression();
 
 // https://github.com/dotnet/csharplang/issues/287
 static void DemonstrateCallerArgumentExpression()
@@ -133,6 +140,8 @@ static void DemonstrateCallerArgumentExpression()
 	PrintBooleanResult(true);
 }
 
+//DemonstrateInterpolatedStringImprovements();
+
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/improved-interpolated-strings.md
 static void DemonstrateInterpolatedStringImprovements()
 {
@@ -140,12 +149,16 @@ static void DemonstrateInterpolatedStringImprovements()
 	// to see how DefaultInterpolatedStringHandler is used by the compiler.
 }
 
+//DemonstrateAsyncMethodBuilderOverride();
+
 // TODO
 // https://github.com/dotnet/csharplang/issues/1407
 static void DemonstrateAsyncMethodBuilderOverride()
 {
 
 }
+
+//DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://github.com/dotnet/csharplang/issues/4436
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
