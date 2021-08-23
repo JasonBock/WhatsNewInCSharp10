@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 
-// DemonstrateGlobalUsingNamespaces();
+//DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
@@ -39,7 +39,10 @@ static void DemonstrateSealedRecordToString()
 	var customer = new RecordCustomer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 
-	var sealedCustomer = new SealedToStringCustomer(Guid.NewGuid(), "Jason");
+	var sealedToStringCustomer = new SealedToStringCustomer(Guid.NewGuid(), "Jason");
+	WriteLine(sealedToStringCustomer);
+
+	var sealedCustomer = new SealedCustomer(Guid.NewGuid(), "Jason");
 	WriteLine(sealedCustomer);
 }
 
@@ -70,6 +73,7 @@ static void DemonstrateWithExpressionsAndAnonymousTypes()
 {
 	var customer = new { Id = Guid.NewGuid(), Name = "Jason" };
 	var differentCustomer = customer with { Name = "Jane" };
+	WriteLine(customer);
 	WriteLine(differentCustomer);
 }
 
@@ -108,7 +112,7 @@ static void DemonstrateBetterLambdas()
 	WriteLine($"{nameof(customerProcessor2)} : {customerProcessor2(recordCustomer)}");
 
 	var oldMultiplier = new Func<int, int, int>((x, y) => x * y);
-	var newMultiplier = (int x, int y) => x + y;
+	var newMultiplier = (int x, int y) => x * y;
 	WriteLine(oldMultiplier(3, 4));
 	WriteLine(newMultiplier(3, 4));
 }

@@ -16,6 +16,8 @@
 				Name = "Jason"
 			};
 
+		private CreateableCustomer() { }
+
 		public override string ToString() => $"{this.Id}, {this.Name}";
 
 		public Guid Id { get; init; }	
