@@ -163,7 +163,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-//DemonstrateStaticAbstractMembersInInterfaces();
+DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://github.com/dotnet/csharplang/issues/4436
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/

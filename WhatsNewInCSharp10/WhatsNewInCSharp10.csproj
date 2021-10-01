@@ -4,6 +4,7 @@
       This is needed for static abstract members in interfaces
     -->
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
