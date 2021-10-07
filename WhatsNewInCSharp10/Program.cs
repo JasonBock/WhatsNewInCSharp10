@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 
-//DemonstrateGlobalUsingNamespaces();
+DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
@@ -25,6 +25,7 @@ static void DemonstrateFileScopedNamespaces()
 //DemonstrateRecordStructs();
 
 // https://github.com/dotnet/csharplang/issues/4334
+// https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/record-structs.md
 static void DemonstrateRecordStructs()
 {
 	var customer = new StructCustomer(Guid.NewGuid(), "Jason");
@@ -49,6 +50,7 @@ static void DemonstrateSealedRecordToString()
 //DemonstrateParameterlessStructConstructors();
 
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/parameterless-struct-constructors.md
+// https://github.com/dotnet/csharplang/issues/99
 static void DemonstrateParameterlessStructConstructors()
 {
 	var point = new Point { X = 1, Y = 2 };
@@ -79,6 +81,7 @@ static void DemonstrateWithExpressionsAndAnonymousTypes()
 
 //DemonstrateExtendedPropertyPatterns();
 
+// https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/extended-property-patterns.md
 // https://github.com/dotnet/csharplang/issues/4394
 static void DemonstrateExtendedPropertyPatterns()
 {
@@ -119,8 +122,8 @@ static void DemonstrateBetterLambdas()
 
 //DemonstrateConstantInterpolatedStrings();
 
-// https://github.com/dotnet/csharplang/issues/2951
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/constant_interpolated_strings.md
+// https://github.com/dotnet/csharplang/issues/2951
 static void DemonstrateConstantInterpolatedStrings()
 {
 	WriteLine(MethodNames.NamesViaHardCodedConcatenation);
@@ -130,6 +133,7 @@ static void DemonstrateConstantInterpolatedStrings()
 
 //DemonstrateCallerArgumentExpression();
 
+// https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/caller-argument-expression.md
 // https://github.com/dotnet/csharplang/issues/287
 static void DemonstrateCallerArgumentExpression()
 {
@@ -148,6 +152,7 @@ static void DemonstrateCallerArgumentExpression()
 //DemonstrateInterpolatedStringImprovements();
 
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/improved-interpolated-strings.md
+// https://github.com/dotnet/csharplang/issues/4487
 static void DemonstrateInterpolatedStringImprovements()
 {
 	// Reminder: Look at the compiler output of DemonstrateCallerArgumentExpression() 
@@ -157,16 +162,17 @@ static void DemonstrateInterpolatedStringImprovements()
 //DemonstrateAsyncMethodBuilderOverride();
 
 // TODO
+// https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/async-method-builders.md
 // https://github.com/dotnet/csharplang/issues/1407
 static void DemonstrateAsyncMethodBuilderOverride()
 {
 
 }
 
-DemonstrateStaticAbstractMembersInInterfaces();
+//DemonstrateStaticAbstractMembersInInterfaces();
 
-// https://github.com/dotnet/csharplang/issues/4436
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
+// https://github.com/dotnet/csharplang/issues/4436
 static void DemonstrateStaticAbstractMembersInInterfaces()
 {
 	// Remember to look at the settings in the .csproj file.
