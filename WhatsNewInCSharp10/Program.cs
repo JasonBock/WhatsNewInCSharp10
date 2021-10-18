@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 
-DemonstrateGlobalUsingNamespaces();
+//DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
@@ -151,6 +151,7 @@ static void DemonstrateCallerArgumentExpression()
 
 //DemonstrateInterpolatedStringImprovements();
 
+// https://devblogs.microsoft.com/dotnet/string-interpolation-in-c-10-and-net-6/
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/improved-interpolated-strings.md
 // https://github.com/dotnet/csharplang/issues/4487
 static void DemonstrateInterpolatedStringImprovements()
@@ -169,7 +170,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-//DemonstrateStaticAbstractMembersInInterfaces();
+DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 // https://github.com/dotnet/csharplang/issues/4436
