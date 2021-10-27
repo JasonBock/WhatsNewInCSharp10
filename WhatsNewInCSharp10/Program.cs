@@ -28,7 +28,6 @@ static void DemonstrateGlobalUsingNamespaces()
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md
 static void DemonstrateFileScopedNamespaces()
 {
-
 	var customer = new Customer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 	WriteLine(typeof(Customer).FullName);
