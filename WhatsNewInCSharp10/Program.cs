@@ -3,13 +3,24 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
+using WhatsNewInCSharp10.MathematicalConstants;
 
-//DemonstrateGlobalUsingNamespaces();
+DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
-static void DemonstrateGlobalUsingNamespaces() =>
+static void DemonstrateGlobalUsingNamespaces()
+{
 	WriteLine($"Hi, {nameof(Math.PI)} is {Math.PI}");
+	WriteLine();
+
+	var constants = ConstantsFactory.GetValues();
+
+	foreach(var constant in constants)
+	{
+		WriteLine(constant.ToString());
+	}
+}
 
 //DemonstrateFileScopedNamespaces();
 
@@ -17,6 +28,7 @@ static void DemonstrateGlobalUsingNamespaces() =>
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md
 static void DemonstrateFileScopedNamespaces()
 {
+
 	var customer = new Customer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 	WriteLine(typeof(Customer).FullName);
@@ -170,7 +182,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-DemonstrateStaticAbstractMembersInInterfaces();
+//DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 // https://github.com/dotnet/csharplang/issues/4436
