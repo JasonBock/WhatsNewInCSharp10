@@ -7,7 +7,7 @@ using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 using WhatsNewInCSharp10.MathematicalConstants;
 
-DemonstrateGlobalUsingNamespaces();
+//DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
@@ -155,7 +155,7 @@ static void DemonstrateConstantInterpolatedStrings()
 	WriteLine(MethodNames.NamesViaInterpolation);
 }
 
-//DemonstrateCallerArgumentExpression();
+DemonstrateCallerArgumentExpression();
 
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/caller-argument-expression.md
 // https://github.com/dotnet/csharplang/issues/287
@@ -194,7 +194,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-//DemonstrateStaticAbstractMembersInInterfaces();
+DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 // https://github.com/dotnet/csharplang/issues/4436
