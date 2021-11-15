@@ -1,4 +1,4 @@
-﻿using PlayingWithFire;
+﻿//using PlayingWithFire;
 using System.ComponentModel;
 using System.Globalization;
 using System.Numerics;
@@ -18,7 +18,7 @@ static void DemonstrateGlobalUsingNamespaces()
 
 	var constants = ConstantsFactory.GetValues();
 
-	foreach(var constant in constants)
+	foreach (var constant in constants)
 	{
 		WriteLine(constant.ToString());
 	}
@@ -155,7 +155,7 @@ static void DemonstrateConstantInterpolatedStrings()
 	WriteLine(MethodNames.NamesViaInterpolation);
 }
 
-DemonstrateCallerArgumentExpression();
+//DemonstrateCallerArgumentExpression();
 
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/caller-argument-expression.md
 // https://github.com/dotnet/csharplang/issues/287
@@ -165,12 +165,29 @@ static void DemonstrateCallerArgumentExpression()
 	// but it looks like it's getting pushed out...but keep it it in mind.
 	// https://github.com/dotnet/csharplang/issues/373
 	static void PrintBooleanResult(bool result,
-		[CallerMemberName] string? callerMemberName = null, 
+		[CallerMemberName] string? callerMemberName = null,
 		[CallerArgumentExpression("result")] string? callerArgumentExpression = null) =>
 			WriteLine($"{result} from {callerMemberName} doing {callerArgumentExpression}");
 
+	static int GetLength(string value)
+	{
+		ArgumentNullException.ThrowIfNull(value);
+		return value.Length;
+	}
+
 	PrintBooleanResult(Math.PI > Math.Sqrt(Math.PI));
 	PrintBooleanResult(true);
+
+	WriteLine(GetLength("Jason"));
+	try
+	{
+		var name = null as string;
+		GetLength(name!);
+	}
+	catch (ArgumentNullException ex)
+	{
+		WriteLine(ex.Message);
+	}
 }
 
 //DemonstrateInterpolatedStringImprovements();
@@ -194,7 +211,7 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-DemonstrateStaticAbstractMembersInInterfaces();
+//DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 // https://github.com/dotnet/csharplang/issues/4436
