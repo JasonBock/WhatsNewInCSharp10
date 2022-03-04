@@ -1,9 +1,9 @@
 ﻿// Turn <LangVersion> in the .props file to "preview"
 // for this to work.
 
-//namespace PlayingWithFire;
+namespace PlayingWithFire;
 
-//[AttributeUsage(AttributeTargets.Method)]
-//public sealed class MyGenericAttribute<T>
-//	: Attribute
-//{ }
+[AttributeUsage(AttributeTargets.Method)]
+public sealed class MyGenericAttribute<T>
+	: Attribute
+{ }

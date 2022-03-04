@@ -1,4 +1,4 @@
-﻿//using PlayingWithFire;
+﻿using PlayingWithFire;
 using System.ComponentModel;
 using System.Globalization;
 using System.Numerics;
@@ -211,13 +211,12 @@ static void DemonstrateAsyncMethodBuilderOverride()
 
 }
 
-//DemonstrateStaticAbstractMembersInInterfaces();
+DemonstrateStaticAbstractMembersInInterfaces();
 
 // https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
 // https://github.com/dotnet/csharplang/issues/4436
 // Turn <LangVersion> in the .props file to "preview"
 // for this to work.
-//[MyGeneric<string>]
 static void DemonstrateStaticAbstractMembersInInterfaces()
 {
 	// Remember to look at the settings in the .csproj file.
