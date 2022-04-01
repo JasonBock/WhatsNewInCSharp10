@@ -1,5 +1,4 @@
-﻿using PlayingWithFire;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -209,26 +208,4 @@ static void DemonstrateInterpolatedStringImprovements()
 static void DemonstrateAsyncMethodBuilderOverride()
 {
 
-}
-
-DemonstrateStaticAbstractMembersInInterfaces();
-
-// https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/
-// https://github.com/dotnet/csharplang/issues/4436
-// Turn <LangVersion> in the .props file to "preview"
-// for this to work.
-static void DemonstrateStaticAbstractMembersInInterfaces()
-{
-	// Remember to look at the settings in the .csproj file.
-	static T Add<T>(T left, T right)
-		where T : INumber<T> => left + right;
-
-	WriteLine(Add(3, 4));
-	WriteLine(Add(3.4, 4.3));
-
-	// Sadly, this doesn't work :(
-	//WriteLine(Add(BigInteger.Parse("49043910940940104390"), BigInteger.Parse("59839583901984390184")));
-
-	var customer = CreateableCustomer.Create();
-	WriteLine(customer);
 }

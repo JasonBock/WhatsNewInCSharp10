@@ -1,15 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <!-- 
-      This is needed for static abstract members in interfaces
-    -->
-    <EnablePreviewFeatures>true</EnablePreviewFeatures>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Runtime.Experimental" Version="6.0.2-mauipre.1.22102.15" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WhatsNewInCSharp10.MathematicalConstants\WhatsNewInCSharp10.MathematicalConstants.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\WhatsNewInCSharp10.MathematicalConstants\WhatsNewInCSharp10.MathematicalConstants.csproj" />
+	</ItemGroup>
 </Project>
