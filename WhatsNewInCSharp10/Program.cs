@@ -6,12 +6,15 @@ using WhatsNewInCSharp10;
 using WhatsNewInCSharp10.Company.Models;
 using WhatsNewInCSharp10.MathematicalConstants;
 
-//DemonstrateGlobalUsingNamespaces();
+DemonstrateGlobalUsingNamespaces();
 
 // https://github.com/dotnet/csharplang/issues/3428
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/GlobalUsingDirective.md
 static void DemonstrateGlobalUsingNamespaces()
 {
+	WriteLine(nameof(DemonstrateGlobalUsingNamespaces));
+	WriteLine();
+
 	WriteLine($"Hi, {nameof(Math.PI)} is {Math.PI}");
 	WriteLine();
 
@@ -29,6 +32,9 @@ static void DemonstrateGlobalUsingNamespaces()
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md
 static void DemonstrateFileScopedNamespaces()
 {
+	WriteLine(nameof(DemonstrateFileScopedNamespaces));
+	WriteLine();
+
 	var customer = new Customer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 	WriteLine(typeof(Customer).FullName);
@@ -40,6 +46,9 @@ static void DemonstrateFileScopedNamespaces()
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/record-structs.md
 static void DemonstrateRecordStructs()
 {
+	WriteLine(nameof(DemonstrateRecordStructs));
+	WriteLine();
+
 	var customer = new StructCustomer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 }
@@ -49,6 +58,9 @@ static void DemonstrateRecordStructs()
 // https://github.com/dotnet/csharplang/issues/4174
 static void DemonstrateSealedRecordToString()
 {
+	WriteLine(nameof(DemonstrateSealedRecordToString));
+	WriteLine();
+
 	var customer = new RecordCustomer(Guid.NewGuid(), "Jason");
 	WriteLine(customer);
 
@@ -65,6 +77,9 @@ static void DemonstrateSealedRecordToString()
 // https://github.com/dotnet/csharplang/issues/99
 static void DemonstrateParameterlessStructConstructors()
 {
+	WriteLine(nameof(DemonstrateParameterlessStructConstructors));
+	WriteLine();
+
 	var point = new Point { X = 1, Y = 2 };
 	WriteLine(point);
 }
@@ -74,6 +89,9 @@ static void DemonstrateParameterlessStructConstructors()
 // https://github.com/dotnet/csharplang/issues/125
 static void DemonstrateMixingDeclarationsAndVariablesInDeconstruction()
 {
+	WriteLine(nameof(DemonstrateMixingDeclarationsAndVariablesInDeconstruction));
+	WriteLine();
+
 	var customer = new RecordCustomer(Guid.NewGuid(), "Jason");
 	(var id, var name) = customer;
 	WriteLine($"{id}, {name}");
@@ -85,6 +103,9 @@ static void DemonstrateMixingDeclarationsAndVariablesInDeconstruction()
 
 static void DemonstrateWithExpressionsAndAnonymousTypes()
 {
+	WriteLine(nameof(DemonstrateWithExpressionsAndAnonymousTypes));
+	WriteLine();
+
 	var customer = new { Id = Guid.NewGuid(), Name = "Jason" };
 	var differentCustomer = customer with { Name = "Jane" };
 	WriteLine(customer);
@@ -97,6 +118,9 @@ static void DemonstrateWithExpressionsAndAnonymousTypes()
 // https://github.com/dotnet/csharplang/issues/4394
 static void DemonstrateExtendedPropertyPatterns()
 {
+	WriteLine(nameof(DemonstrateExtendedPropertyPatterns));
+	WriteLine();
+
 	var recordCustomer = new RecordCustomer(Guid.NewGuid(), "Jason");
 
 	if (recordCustomer is RecordCustomer { Name: { Length: >= 5 } })
@@ -115,6 +139,9 @@ static void DemonstrateExtendedPropertyPatterns()
 // https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/lambda-improvements.md
 static void DemonstrateBetterLambdas()
 {
+	WriteLine(nameof(DemonstrateBetterLambdas));
+	WriteLine();
+
 	var recordCustomer = new RecordCustomer(Guid.NewGuid(), "Jason");
 	var customerProcessor1 = new Func<RecordCustomer, BigInteger>(
 		customer => customer.Name.Length + BigInteger.Parse(customer.Id.ToString("N"), NumberStyles.HexNumber));
@@ -149,6 +176,9 @@ static void DemonstrateBetterLambdas()
 // https://github.com/dotnet/csharplang/issues/2951
 static void DemonstrateConstantInterpolatedStrings()
 {
+	WriteLine(nameof(DemonstrateConstantInterpolatedStrings));
+	WriteLine();
+
 	WriteLine(MethodNames.NamesViaHardCodedConcatenation);
 	WriteLine(MethodNames.NamesViaConcatenation);
 	WriteLine(MethodNames.NamesViaInterpolation);
@@ -160,6 +190,9 @@ static void DemonstrateConstantInterpolatedStrings()
 // https://github.com/dotnet/csharplang/issues/287
 static void DemonstrateCallerArgumentExpression()
 {
+	WriteLine(nameof(DemonstrateCallerArgumentExpression));
+	WriteLine();
+
 	// It would've been nice if the "nameof(parameter)" feature would've made it into C# 10,
 	// but it looks like it's getting pushed out...but keep it it in mind.
 	// https://github.com/dotnet/csharplang/issues/373
